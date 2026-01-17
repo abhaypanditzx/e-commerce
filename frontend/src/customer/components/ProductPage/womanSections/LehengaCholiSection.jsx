@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import CardTemp from '../../ElementsTemplate/CardTemp.jsx';
 import axios from 'axios';
+import { useContext } from 'react';
+import { UserContext } from '../../../../Context/ContextProvider.jsx';
 const LehengaCholiSection = (props) => {
+  const {myUrl} = useContext(UserContext)
         const [lehengaCholi,setLehengaCholi] = useState([]);
         useEffect(()=>{
     const loadLehengaCholi = async()=>{
-        const res = await  axios.get('http://localhost:3000/product/woman/lehengaCholi');
+        const res = await  axios.get(`${myUrl}/product/woman/lehengaCholi`);
          setLehengaCholi(res.data.lehengaCholi);
     };
   loadLehengaCholi();

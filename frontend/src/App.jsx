@@ -22,7 +22,7 @@ function App() {
       </div>
       <Routes>
         <Route element={<HomePage />} path='/' />
-        <Route element={<DressesSection category='dress' />} path='/product/woman/dress' />
+        <Route element={<DressesSection category='dress'/>} path='/product/woman/dress' />
         <Route element={<JeansSection category='Wjeans'/>} path='/product/woman/Wjeans' />
         <Route element={<TopsSection category='tops' />} path='/product/woman/tops' />
         <Route element={<Lehenga category='lehenga'/>} path='/product/woman/lehenga' />

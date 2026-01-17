@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { ChevronRightIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { UserContext } from "../Context/ContextProvider";
 const ProductOverview = () => {
   const { gender, category, id } = useParams();
   const [product, setProduct] = useState(null);
+  const {myUrl}= useContext(UserContext) 
   useEffect(() => {
     const load = async () => {
       const res = await axios.get(
-        `http://localhost:3000/product/${gender}/${category}`
+        `${myUrl}/product/${gender}/${category}`
       );
       const arr = res.data[category];
       setProduct(await arr[id]);
@@ -16,7 +18,7 @@ const ProductOverview = () => {
     };
     load();
   }, [id]);
-  if (!product) return <h2>Loading...</h2>;
+  if (!product) return <h2 className=" absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[-50%]">Loading...</h2>;
   const sizes = ["S", "M", "L", "XL", "XXL"];
   return (
     <div className="md:p-5 p-2 flex md:flex-row flex-col">

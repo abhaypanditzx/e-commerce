@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../Context/ContextProvider';
 
 
   const flattenProducts = (apiData) => {
@@ -17,12 +18,13 @@ import { Link } from 'react-router-dom';
 const Search = () => {
     const [searchValue,setSearchValue] = useState('');
     const [searchResult,setSearchResult] = useState([]);
+    const {myUrl} = useContext(UserContext)
   const searchQuery = async (e)=>{
     setSearchValue(e.target.value)
     e.preventDefault()
     if (!searchValue.trim()) return;
     try{
-    const response  =await axios.get(`http://localhost:3000/product/allProducts`);
+    const response  =await axios.get(`${myUrl}/product/allProducts`);
      const flatten =  flattenProducts(response.data);
    
       const filtered = flatten.filter((p) =>
