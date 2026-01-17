@@ -13,6 +13,7 @@ import PantsSection from './customer/components/ProductPage/manSections/PantsSec
 import ShoesSection from './customer/components/ProductPage/manSections/ShoesSection.jsx';
 import KurtaSection from './customer/components/ProductPage/manSections/KurtaSection.jsx';
 import ProductOverview from './pages/ProductOverview.jsx';
+import Search from './pages/search/Search.jsx';
 function App() {
   return (
     <>
@@ -31,6 +32,9 @@ function App() {
           <Route element={<PantsSection category='pants'/>}   path='/product/man/pants'/>
            <Route element={<ShoesSection category='shoes'/>}  path='/product/man/shoes'/> 
           <Route element={<KurtaSection category='kurta' />}  path='/product/man/kurta'/> 
+          <Route element={<Search/>}  path='/search'/> 
+          <Route element={<Authentication/>}  path='/authentication'/> 
+
 
       </Routes>
     </>

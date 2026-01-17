@@ -5,7 +5,7 @@ export const UserContext = createContext();
 
 export const UserProvider = ({children}) => {
     // states 
-    const myUrl =  "http://localhost:3000";
+    const myUrl =  "htthttps://e-commerce-zegt.onrender.com";
   return (
   <UserContext.Provider value={{myUrl}} >
     {children}

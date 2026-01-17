@@ -91,3 +91,12 @@ exports.getManJeans = async (req, res) => {
         res.json({ message: "error " })
     }
 }
+exports.getAllProducts =  async (req,res)=>{
+    try{
+    const allProducts  = await [dress, Wjeans, Mjeans, tops, lehenga, lehengaCholi, gouns, shirts, pants, shoes, kurta];
+    res.json(allProducts);
+    }
+    catch(err){
+        res.json({message:"error"})
+    }
+}

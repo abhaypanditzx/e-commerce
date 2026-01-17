@@ -8,8 +8,8 @@ const cardTemp = (props) => {
 const {category,gender,id} = props;
 
     return (
-<Link  to={`/product/${gender}/${category}/${id}`} >
-       <div className='w-[14rem] h-[17rem] hover:scale-101 hover:border-blue-200 bg-white cursor-pointer shadow-xs  border-gray-200 border-[0.2px]  flex flex-col overflow-hidden   '>
+<Link  to={gender?`/product/${gender}/${category}/${id}` : '/'} >
+       <div className={`w-[14rem] h-[17rem] hover:scale-101 hover:border-blue-200 bg-white cursor-pointer shadow-xs  border-gray-200 border-[0.2px]  flex flex-col overflow-hidden `}>
             <img className='object-top min-h-32 max-h-40 object-cover ' src={imageUrl} alt="product-image" />
             <h3 className='text-[14px] p-2 tracking- poppins-medium    text-start '>{title}</h3>
             <div className='flex   items-end'>

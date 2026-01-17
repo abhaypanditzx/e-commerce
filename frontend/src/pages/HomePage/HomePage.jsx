@@ -3,10 +3,11 @@ import HomeSectionCard from "../../customer/components/HomeSectionCard/HomeSecti
 
 const HomePage=()=>{
     return(
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 h-full w-full">
             <MainSwiper/>
          <div>
             <HomeSectionCard/>
+           
          </div>
         </div>
     )

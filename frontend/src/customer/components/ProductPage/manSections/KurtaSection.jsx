@@ -14,12 +14,13 @@ const getShirtData= async()=>{
 console.log(kurta)
 getShirtData();
 },[])
-
+ const isKurtaPage = props.category? kurta: kurta.slice(0 , 5) ;
+ 
   return (
      <div className='flex w-full p-4  gap-3 flex-wrap'>
        {
-         kurta.map((product,id)=>(
-         <CardTemp   key={id} category={props.category} gender='man' id={id}  product={product}/>
+         isKurtaPage.map((product,id)=>(
+         <CardTemp   key={id} category={props?.category} gender='man' id={id}  product={product}/>
          ))
        }
      </div>
