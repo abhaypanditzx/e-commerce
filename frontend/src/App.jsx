@@ -33,7 +33,7 @@ function App() {
            <Route element={<ShoesSection category='shoes'/>}  path='/product/man/shoes'/> 
           <Route element={<KurtaSection category='kurta' />}  path='/product/man/kurta'/> 
           <Route element={<Search/>}  path='/search'/> 
-          <Route element={<Authentication/>}  path='/authentication'/> 
+          {/* <Route element={<Authentication/>}  path='/authentication'/>  */}
 
 
       </Routes>
